@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #fff9c4; /* Kuning muda */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background-color: #ffeb3b; /* Kuning lebih terang */
+  color: #333;
+  text-align: center;
+  padding: 2rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #ff5722; /* Oranye */
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Navigation Styles */
+nav {
+  background-color: #ffc107; /* Kuning lebih gelap */
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav li {
+  margin: 0 1.5rem;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #ff9800;
+  color: white;
+}
+
+/* Main Content Styles */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.section-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.section-card h2 {
+  background-color: #ff9800; /* Oranye */
+  color: white;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+.section-card h2 i {
+  margin-right: 10px;
+}
+
+.content {
+  padding: 1.5rem;
+}
+
+.section-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.achievements {
+  list-style-type: none;
+}
+
+.achievements li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.achievements li:last-child {
+  border-bottom: none;
+}
+
+.achievements li strong {
+  color: #ff5722;
+}
+
+/* Roster Grid */
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.player {
+  text-align: center;
+  background-color: #fff9c4;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.player:hover {
+  transform: translateY(-5px);
+}
+
+.player img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 0.8rem;
+}
+
+.player h3 {
+  color: #ff5722;
+  margin-bottom: 0.3rem;
+}
+
+.player p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Creator Info */
+.creator-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-pic {
+  font-size: 8rem;
+  color: #ff9800;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.profile-details h3 {
+  margin-bottom: 1rem;
+  color: #ff5722;
+}
+
+.profile-details p {
+  margin-bottom: 0.8rem;
+}
+
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffc107;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  nav li {
+      margin: 0.5rem 0;
+  }
+  
+  .roster-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .creator-info {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .profile-pic {
+      font-size: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .roster-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  header h1 {
+      font-size: 2rem;
+  }
+  #img{
+    width: 100px;
+    height: 100px;
+
+  }
+}
