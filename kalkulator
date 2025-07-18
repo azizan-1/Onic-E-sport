@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Haiii Tanyaaaa</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffebf3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .calculator {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            width: 300px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #ff6b9d;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        input {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ffb6d5;
+            border-radius: 10px;
+            font-size: 16px;
+            text-align: center;
+            outline: none;
+        }
+        
+        input:focus {
+            border-color: #ff6b9d;
+        }
+        
+        button {
+            background-color: #ff6b9d;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 10px 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background-color: #ff4785;
+            transform: scale(1.05);
+        }
+        
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 18px;
+            min-height: 20px;
+            color: #ff6b9d;
+            font-weight: bold;
+            background-color: #fff9fb;
+            border-radius: 10px;
+            border: 1px dashed #ffb6d5;
+        }
+        
+        .special {
+            font-size: 24px;
+            color: #ff1493;
+            animation: bounce 0.5s;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>✨ Kalkulator Ajaib ✨</h1>
+        <input type="number" id="num1" placeholder="Angka pertama">
+        <input type="number" id="num2" placeholder="Angka kedua">
+        
+        <div>
+            <button onclick="calculate('add')">+ Tambah</button>
+            <button onclick="calculate('subtract')">- Kurang</button>
+            <button onclick="calculate('multiply')">× Kali</button>
+            <button onclick="calculate('divide')">÷ Bagi</button>
+        </div>
+        
+        <div id="result">Hasil akan muncul di sini...</div>
+    </div>
+
+    <script>
+        function calculate(operation) {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            let result;
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').innerHTML = "Masukkan kedua angka dulu ya!";
+                return;
+            }
+            
+            switch(operation) {
+                case 'add':
+                    // Penjumlahan khusus akan menghasilkan pesan spesial
+                    result = `<span class="special">Haiii Tanyaaaa</span>`;
+                    break;
+                case 'subtract':
+                    result = num1 - num2;
+                    break;
+                case 'multiply':
+                    result = num1 * num2;
+                    break;
+                case 'divide':
+                    result = num2 !== 0 ? num1 / num2 : "Tidak bisa dibagi nol!";
+                    break;
+                default:
+                    result = "Operasi tidak valid";
+            }
+            
+            document.getElementById('result').innerHTML = `Hasil: ${result}`;
+        }
+    </script>
+</body>
+</html>
